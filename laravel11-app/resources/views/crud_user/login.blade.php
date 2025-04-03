@@ -26,12 +26,13 @@
                                 <div class="form-group mb-3">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="remember"> Remember Me
+                                            <input type="checkbox" name="remember"> Hãy nhớ đến tôi đi pls
                                         </label>
                                     </div>
                                 </div>
-                                <div class="d-grid mx-auto">
-                                    <button type="submit" class="btn btn-dark btn-block">Signin</button>
+                                <div class="d-flex mx-auto justify-content-end align-items-center">
+                                    <a href="{{ route('login') }} " class="text-decoration-none">Quên mật khẩu</a>
+                                    <button type="submit" class="btn btn-dark btn-block">Đăng nhập</button>
                                 </div>
                             </form>
                         </div>
