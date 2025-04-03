@@ -4,7 +4,7 @@
     <main class="login-form">
         <div class="container">
             <div class="row justify-content-center">
-                <table>
+                <table class="table table-bordered table-stripped">
                     <thead>
                         <tr>
                             <th>ID</th>

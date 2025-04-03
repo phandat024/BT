@@ -3,23 +3,11 @@
 @section('content')
     <main class="login-form">
         <div class="container">
-            <div class="row justify-content-center">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{$messi->id}}</td>
-                            <td>{{$messi->name}}</td>
-                            <td>{{$messi->email}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="d-gird mx-auto text-center border border-dark p-3 my-4">
+                <div class="mb-3 fw-bold">Man hinh chi tiet</div>
+                <div>Ten: {{$user->name}}</div>
+                <div>Email: {{$user->email}}</div>
+                <a href="{{ route('user.updateUser', ['id' => $user->id]) }}">Edit</a>
             </div>
         </div>
     </main>

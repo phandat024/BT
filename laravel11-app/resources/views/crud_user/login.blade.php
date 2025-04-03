@@ -6,7 +6,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card">
-                        <h3 class="card-header text-center">Login</h3>
+                        <h3 class="card-header text-center">Đăng nhập</h3>
                         <div class="card-body">
                             <form method="POST" action="{{ route('user.authUser') }}">
                                 @csrf
@@ -40,5 +40,16 @@
                 </div>
             </div>
         </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        if (password !== confirmPassword) {
+            event.preventDefault();
+            alert('Mật khẩu và nhập lại mật khẩu không khớp!');
+        }
+        });
+    </script>
     </main>
 @endsection

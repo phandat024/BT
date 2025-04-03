@@ -22,9 +22,6 @@ class CrudUserController extends Controller
         return view('crud_user.login');
     }
 
-    /**
-     * User submit form login
-     */
     public function authUser(Request $request)
     {
         $request->validate([
@@ -42,17 +39,11 @@ class CrudUserController extends Controller
         return redirect("login")->withSuccess('Login details are not valid');
     }
 
-    /**
-     * Registration page
-     */
     public function createUser()
     {
         return view('crud_user.create');
     }
 
-    /**
-     * User submit form register
-     */
     public function postUser(Request $request)
     {
         $request->validate([
@@ -64,10 +55,9 @@ class CrudUserController extends Controller
         $data = $request->all();
         $check = User::create([
             'name' => $data['name'],
-            'phone' => $data['phone'],
-            'address' => $data['address'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            'password' => Hash::make($data['password']),
+            /**adddaddd**/
         ]);
 
         return redirect("login");
@@ -80,7 +70,7 @@ class CrudUserController extends Controller
         $user_id = $request->get('id');
         $user = User::find($user_id);
 
-        return view('crud_user.read', ['messi' => $user]);
+        return view('crud_user.read', ['user' => $user]);
     }
 
     /**
@@ -131,11 +121,6 @@ class CrudUserController extends Controller
      */
     public function listUser()
     {
-//        $users = [
-//                'users' => User::all()
-//        ];
-//        return view('crud_user.ronaldo', $users);
-
         if(Auth::check()){
             $users = User::all();
             return view('crud_user.list', ['users' => $users]);
